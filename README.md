@@ -3,7 +3,7 @@
 This is the 7th place solution to the competition [Shopee Code League image competition](https://www.kaggle.com/c/shopee-product-detection-open) (with the dataset therein).
 
 ## Overview
-<img src="imgs/img1.png" alt="drawing" width="400"/>
+<img src="imgs/img1.png" alt="drawing" width="800"/>
 
 ### TPU/XLA data pipeline
 Based on the previous experience in [Kaggle flower competition](https://www.kaggle.com/c/flower-classification-with-tpus/), we decided to use the power of tpu/xla engine for training neural nets in this competition. The tools for data preprocessing is a bit different from training in normal gpu, but luckily we can still use tf.data api.
@@ -15,11 +15,11 @@ Based on the previous experience in [Kaggle flower competition](https://www.kagg
 We start from ResNet then change to EfficientNet as our model architecture. Also, the proper image scale is important to the corresponding network.
 
 ### Noisy labels
-<img src="imgs/img2.png" alt="drawing" width="400"/><br>
+<img src="imgs/img2.png" alt="drawing" width="800"/><br>
 After checking the data and the results of the baseline model, we found out the labels are noisy, which may be the reason that we cannot get high accuracy in this dataset. There is certain ambiguity between some categories, and some images are hard to categorize even if checked by our own eyes. Therefore we adopt _label smoothing_ here. The better pretrained architecture can also be more robust to noisy labels. [[1](https://ai.googleblog.com/2020/08/understanding-deep-learning-on.html)]
 
 ### Training
-<img src="imgs/img3.png" alt="drawing" width="400"/><br>
+<img src="imgs/img3.png" alt="drawing" width="800"/><br>
 The warmup-annealing learning rate schedule helps the network training more stable and converge faster [[2](https://arxiv.org/abs/1708.07120)]. We further extended the annealing part to cyclic annealing, which gives the network higher chances to find better optima. Also we can use the optima checkpoints during training for final ensembling. [[3](https://arxiv.org/abs/1704.00109), [4](https://arxiv.org/abs/1803.05407)]
 
 ### Dependencies
