@@ -1,6 +1,6 @@
 
 # Shopee Code League - Product Categorization
-This is the 7th place solution to the competition [Shopee Code League image competition](https://www.kaggle.com/c/shopee-product-detection-open) (with the dataset therein).
+This is the 7th place solution to the competition [Shopee Code League image competition](https://www.kaggle.com/c/shopee-product-detection-open).
 
 ## Overview
 <img src="imgs/img1.png" alt="drawing" width="900"/>
