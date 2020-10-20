@@ -8,7 +8,7 @@ This is the 7th place solution to the competition [Shopee Code League image comp
 ### TPU/XLA data pipeline
 Based on the previous experience in [Kaggle flower competition](https://www.kaggle.com/c/flower-classification-with-tpus/), we decided to use the power of tpu/xla engine for training neural nets in this competition. The tools for data preprocessing is a bit different from training in normal gpu, but luckily we can still use tf.data api.
 * To train lots of images, it is better firstly translate images to the format _filename.tfrecords_.
-* We cannot use normal preprocessing package such as _albumentations_, but we need to implement the functions of image transformations by ourselves. Here we use image shift/rotate/scale and _Cutout_ for image augmentations.
+* We cannot use normal pre-processing package such as _albumentations_, but we need to implement the functions of image transformations by ourselves. Here we use image shift/rotate/scale and _Cutout_ for image augmentations.
 * For a ResNet50, ~990 sec/epoch on tesla p100; ~70 sec/epoch on tpu v3-8.
 
 ### Model
