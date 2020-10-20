@@ -15,7 +15,7 @@ Based on the previous experience in [Kaggle flower competition](https://www.kagg
 We start from ResNet then change to EfficientNet as our model architecture. Also, the proper image scale is important to the corresponding network.
 
 ### Noisy labels
-<img src="imgs/img2.png" alt="drawing" width="650"/><br><br>
+<img src="imgs/img2.png" alt="drawing" width="700"/><br><br>
 After checking the data and the results of the baseline model, we found out the labels are noisy, which may be the reason that we cannot get high accuracy in this dataset. There is certain ambiguity between some categories, and some images are hard to categorize even if checked by our own eyes. Therefore we adopt _label smoothing_ here. The better pretrained architecture can also be more robust to noisy labels. [[1](https://ai.googleblog.com/2020/08/understanding-deep-learning-on.html)]
 
 ### Training
