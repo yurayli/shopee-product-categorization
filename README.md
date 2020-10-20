@@ -3,6 +3,7 @@
 This is the 7th place solution to the competition [Shopee Code League image competition](https://www.kaggle.com/c/shopee-product-detection-open).
 
 ## Overview
+The final submission is ensemble of efficientnet-b4, efficientnet-b5, their checkpoints, and test-time augmentations.<br><br>
 <img src="imgs/img1.png" alt="drawing" width="900"/>
 
 ### TPU/XLA data pipeline
