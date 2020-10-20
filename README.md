@@ -16,11 +16,11 @@ We start from ResNet then change to EfficientNet as our model architecture. Also
 
 ### Noisy labels
 <img src="imgs/img2.png" alt="drawing" width="700"/><br><br>
-After checking the data and the results of the baseline model, we found out the labels are noisy, which may be the reason that we cannot get high accuracy in this dataset. There is certain ambiguity between some categories, and some images are hard to categorize even if checked by our own eyes. Therefore we adopt _label smoothing_ here. The better pretrained architecture can also be more robust to noisy labels. [[1][1]]
+After checking the data and the results of the baseline model, we found out the labels are noisy, which may be the reason that we cannot get high accuracy in this dataset. There is certain ambiguity between some categories, and some images are hard to categorize even if checked by our own eyes. Therefore we adopt _label smoothing_ here. The better pretrained architecture can also be more robust to noisy labels. [[1](#references)]
 
 ### Training
 <img src="imgs/img3.png" alt="drawing" width="900"/><br>
-The warmup-annealing learning rate schedule helps the network training more stable and converge faster [[2][2]]. We further extended the annealing part to cyclic annealing, which gives the network higher chances to find better optima. Also we can use the optima checkpoints during training for final ensembling. [[3][3], [4][4]]
+The warmup-annealing learning rate schedule helps the network training more stable and converge faster [[2](#references)]. We further extended the annealing part to cyclic annealing, which gives the network higher chances to find better optima. Also we can use the optima checkpoints during training for final ensembling. [[3](#references), [4](#references)]
 
 ### Dependencies
 tensorflow 2.2.0
