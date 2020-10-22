@@ -12,12 +12,12 @@ Based on the previous experience in [Kaggle flower competition](https://www.kagg
 * We cannot use normal pre-processing package such as _albumentations_, but we need to implement the functions of image transformations by ourselves. Here we use image shift/rotate/scale and _Cutout_ for image augmentations.
 * For a ResNet50, ~990 sec/epoch on tesla p100; ~70 sec/epoch on tpu v3-8.
 
-### Model
-We start from ResNet then change to EfficientNet as our model architecture. Also, the proper image scale is important to the corresponding network.
-
 ### Noisy labels
 <img src="imgs/img2.png" alt="drawing" width="700"/><br><br>
-After checking the data and the results of the baseline model, we found out the labels are noisy, which may be the reason that we cannot get high accuracy in this dataset. There is certain ambiguity between some categories, and some images are hard to categorize even if checked by our own eyes. Therefore we adopt _label smoothing_ here. The better pretrained architecture can also be more robust to noisy labels. [[1](#references)]
+After checking the data and the results of the baseline model, we found out the labels are noisy, which may be the reason that we cannot get high accuracy in this dataset. There is certain ambiguity between some categories, and some images are hard to categorize even if checked by our own eyes. Thus here we adopt _label smoothing_ to address this problem.
+
+### Model
+We start from ResNet then change to EfficientNet as our model architecture. The better pretrained architecture can also be more robust to noisy labels [[1](#references)]. Also, the proper image scale is important to the corresponding network.
 
 ### Training
 <img src="imgs/img3.png" alt="drawing" width="900"/><br>
