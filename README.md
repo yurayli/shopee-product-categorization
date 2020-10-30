@@ -14,7 +14,7 @@ Based on the previous experience in [Kaggle flower competition](https://www.kagg
 
 ### Noisy labels
 <img src="imgs/img2.png" alt="drawing" width="700"/><br><br>
-After checking the data and the results of the baseline model, we found out the labels are noisy, which may be the reason that we cannot get high accuracy in this dataset. There is certain ambiguity between some categories, and some images are hard to categorize even if checked by our own eyes. Thus here we adopt _label smoothing_ to address this problem.
+After checking the data and the results of the baseline model, we found out the labels are noisy, which may be the reason that we cannot get high accuracy in this dataset. Also there is certain ambiguity between some categories, i.e., some images are hard to categorize even checked by our own eyes. Thus here we adopt _label smoothing_ to address these problems.
 
 ### Model
 We start from ResNet then change to EfficientNet as our model architecture. The better pretrained architecture can also be more robust to noisy labels [[1](#references)]. Also, the proper image scale is important to the corresponding network.
